@@ -1,0 +1,18 @@
+{
+  "name":"이시화",
+  "age":30,
+  "cars":[
+    {
+      "name":"K5",
+      "type":"sedan",
+      "car_number":"11가 1111",
+      "TYPE":"sedan"
+    },
+    {
+      "name":"Q5",
+      "type":"SUV",
+      "car_number":"22가 2222",
+      "TYPE":"SUV"
+    }
+  ]
+}

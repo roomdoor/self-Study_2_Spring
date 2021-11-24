@@ -1,0 +1,47 @@
+package com.example.chapter10.controller;
+
+
+import com.example.chapter10.wishList.dto.WishListDto;
+import com.example.chapter10.wishList.service.WishListService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Slf4j
+@RestController
+@RequestMapping("/api/restaurant")
+@RequiredArgsConstructor
+public class ApiController {
+
+    private final WishListService wishListService;
+
+    @GetMapping("/search")
+    public WishListDto search(String query) {
+        return wishListService.search(query);
+    }
+
+
+    @PostMapping("")
+    public WishListDto add(@RequestBody WishListDto wishListDto) {
+        log.info("{}", wishListDto);
+
+        return wishListService.add(wishListDto);
+    }
+
+    @GetMapping("/all")
+    public List<WishListDto> findAll() {
+        return wishListService.findAll();
+    }
+
+    @DeleteMapping("/{index}")
+    public void delete(@PathVariable int index) {
+        wishListService.delete(index);
+    }
+
+    @PostMapping("/{index}")
+    public void visited(@PathVariable int index) {
+        wishListService.visited(index);
+    }
+}
