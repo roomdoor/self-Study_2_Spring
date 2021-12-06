@@ -17,7 +17,6 @@ abstract public class MemoryDbRepositoryAbstract<T extends MemoryDbEntity> imple
     @Override
     public T save(T entity) {
         var optionalEntity = db.stream().filter(it -> it.getIndex() == entity.getIndex()).findFirst();
-
         if (optionalEntity.isEmpty()) {
             index++;
             entity.setIndex(index);

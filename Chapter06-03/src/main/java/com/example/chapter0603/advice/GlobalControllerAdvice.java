@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice//(basePackages = "패키지 주소") // basePakage 지정하면 그 패키지에서만 동작   //RestController  기준이기 때문에 RestControllerAdvice 사용 view resolver 를 사용하면 ControllerAdvice 사용
-class GlobalControllerAdvice {
+public class GlobalControllerAdvice {
 
     @ExceptionHandler(value = Exception.class) // 모든 예외 잡는 경우
     public ResponseEntity exception(Exception e) {
